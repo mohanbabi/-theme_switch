@@ -1,0 +1,45 @@
+/* Default Light Theme */
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --bg-color: black;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 1.5s ease, color 2.5s ease;
+}
+
+button {
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* Define keyframe animation for a more elaborate effect */
+@keyframes colorPulse {
+    0% {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    50% {
+        background-color: var(--bg-color-alt, gray); /* Optional alternative color */
+        color: var(--text-color-alt, white);
+    }
+    100% {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+}
+
+/* Apply the animation when in dark theme */
+.dark-theme body {
+    animation: colorPulse 1s ease-in-out;
+}
